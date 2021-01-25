@@ -1,0 +1,7 @@
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\bin\Debug\SwordDamage.exe.config
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\bin\Debug\SwordDamage.exe
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\bin\Debug\SwordDamage.pdb
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\obj\Debug\SwordDamage.csprojAssemblyReference.cache
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\obj\Debug\SwordDamage.csproj.CoreCompileInputs.cache
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\obj\Debug\SwordDamage.exe
+C:\Users\rober\OneDrive\projects\cs\SwordDamage\SwordDamage\obj\Debug\SwordDamage.pdb
