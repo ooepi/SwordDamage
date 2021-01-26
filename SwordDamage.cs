@@ -3,44 +3,66 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SwordDamage
 {
     class SwordDamage
     {
-        public const int BASE_DAMAGE = 3;
-        public const int FLAME_DAMAGE = 2;
-
-        public int Roll;
-        public decimal MagicMultiplier = 1M;
-        public int FlamingDamage = 0;
-        public int Damage;
-
-        public void CalculateDamage()
+        public SwordDamage(int roll)
         {
-            Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
+            this.roll = roll;
         }
 
-        public void SetMagic(bool isMagic)
+        private const int BASE_DAMAGE = 3;
+        private const int FLAME_DAMAGE = 2;
+
+        private int roll;
+        private bool flaming;
+        private bool magic;
+
+
+        /// <summary>
+        /// Damage property
+        /// </summary>
+        public int Damage { get; private set; }
+
+        /// <summary>
+        /// Roll property, Takes the roll as a value, and then calls the CalculateDamage method
+        /// </summary>
+        public int Roll
         {
-            if (isMagic)
-            {
-                MagicMultiplier = 1.75M;
-            }
-            else
-            {
-                MagicMultiplier = 1M;
-            }
-            CalculateDamage();
+            get { return roll; }
+            set { roll = value; CalculateDamage(); }
+        }
+        /// <summary>
+        /// Flaming property, Sets the Flaming value of the sword on or off, and then calls the CalculateDamage method
+        /// </summary>
+        public bool Flaming
+        {
+            get { return flaming; }
+            set { flaming = value; CalculateDamage(); }
+        }
+        /// <summary>
+        /// Magic property,  Sets the Magic value of the sword on or off, and then calls the CalculateDamage method
+        /// </summary>
+        public bool Magic
+        {
+            get { return magic; }
+            set { magic = value; CalculateDamage(); }
         }
 
-        public void SetFlaming(bool isFlaming)
+
+
+        private void CalculateDamage()
         {
-            CalculateDamage();
-            if (isFlaming)
-            {
-                Damage += FLAME_DAMAGE;
-            }
+            decimal magicMultiplier = 1M;
+            if (Magic) magicMultiplier = 1.75M;
+
+            Damage = BASE_DAMAGE;
+            Damage = (int)(Roll * magicMultiplier) + BASE_DAMAGE;
+            if (Flaming) Damage += FLAME_DAMAGE;
+
         }
     }
 }
